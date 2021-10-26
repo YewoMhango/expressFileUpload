@@ -36,3 +36,4 @@ var uploadFile = function (file) {
     })
         .catch(function (err) { return alert(err); });
 };
+//# sourceMappingURL=index.js.map
