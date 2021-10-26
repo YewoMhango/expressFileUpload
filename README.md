@@ -1,2 +1,2 @@
 # expressFileUpload
-Demo of uploading files from a browser to an express.js server
+Demo of uploading files to a server using express.js

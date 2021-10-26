@@ -7,7 +7,7 @@ import bodyParser from "body-parser";
 import morgan from "morgan";
 import _ from "lodash";
 
-const host = "http://localhost";
+const host = "localhost";
 const port = 8080;
 
 const app = express();
@@ -25,7 +25,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
-app.listen(8080, () => console.log(`Server listening on ${host}:${port}`));
+app.listen(8080, () =>
+  console.log(`Server listening on http://${host}:${port}`)
+);
 
 app.use(express.static(path.join(__dirname, "static")));
 
@@ -52,7 +54,7 @@ app.post("/upload-file", async (req, res) => {
           name: file.name,
           mimetype: file.mimetype,
           size: file.size,
-          fileUrl: `${host}:${port}/uploads/${fileName}`,
+          fileUrl: `http://${host}:${port}/uploads/${fileName}`,
         },
       });
     }
